@@ -46,7 +46,9 @@ gem "bootsnap", require: false
 
 # Use httparty to make HTTP requests and parse JSON responses.
 gem "httparty"
+gem "sassc-rails"
 gem "slim-rails"
+gem "bootstrap"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
