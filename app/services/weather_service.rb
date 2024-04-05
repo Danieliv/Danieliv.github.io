@@ -5,8 +5,8 @@ class WeatherService
   format   :json
   headers "Content_type" => "application/json"
 
-  def self.fetch_weather_by(zip:, city:)
-    response = get("/weather?q=#{city}&zip=#{zip}&units=imperial&appid=#{ENV['OPENWEATHERMAP_API_KEY']}")
+  def self.fetch_weather_by(zip:, city:, latitude:, longitude:)
+    response = get("/weather?lat=#{latitude}&lon=#{longitude}&q=#{city}&zip=#{zip}&units=imperial&appid=#{ENV['OPENWEATHERMAP_API_KEY']}")
     JSON.parse(response.body)
   end
 end

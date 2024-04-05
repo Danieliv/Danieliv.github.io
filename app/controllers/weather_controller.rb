@@ -4,9 +4,10 @@ class WeatherController < ApplicationController
   end
 
   def get_weather
-    city     = params[:city]
-    zip_code = params[:zip_code]
-    @weather_data = WeatherService.fetch_weather_by(city: city, zip: zip_code)
+    @weather_data = WeatherService.fetch_weather_by(latitude:  params[:latitude],
+                                                    longitude: params[:longitude],
+                                                    city:      params[:city],
+                                                    zip:       params[:zip_code])
 
     render json: @weather_data
   end
@@ -14,6 +15,6 @@ class WeatherController < ApplicationController
   private
 
   def weather_params
-    params.permit(:city, :zip_code)
+    params.permit(:latitude, :longitude, :city, :zip_code)
   end
 end
