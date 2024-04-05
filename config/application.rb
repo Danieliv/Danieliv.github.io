@@ -6,6 +6,9 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# required for openweather
+ENV['OPENWEATHERMAP_API_KEY'] = '7314b9160f354b0c59329869e6771f34'
+
 module WeatherApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
