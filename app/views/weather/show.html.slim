@@ -1,0 +1,23 @@
+doctype html
+html lang="en"
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title Weather App
+  body data-controller="weather"
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container
+        .row.justify-content-center
+          button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+            span.navbar-toggler-icon
+          .collapse.navbar-collapse#navbarNavAltMarkup
+            form.form-inline.search-form data-weather-target="searchForm"
+              input.form-control.search-input type="text" id="cityInput" placeholder="Enter City or Zip Code" data-weather-target="inputLocation"
+              button.btn.search-button type="button" id="searchButton" data-action="click->weather#getWeatherByInputLocation" Get Weather
+
+    .container
+      .row.justify-content-center
+        .col-md-6
+          = render partial: "weather/weather"
+        .col-md-6
+          = render partial: "weather/forecast"

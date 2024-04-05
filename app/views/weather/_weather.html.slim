@@ -1,0 +1,47 @@
+.card.weather-card
+  .card-header.text-center
+    | Weather Forecast
+  .card-body
+    .text-center
+      .currentDate.text-center data-weather-target="currentDate"
+      .location data-weather-target="currentLocation"
+      img.weather-icon src='' alt='Weather Icon' data-weather-target="currentIcon"
+      .temperature data-weather-target="currentTemperature"
+      .description data-weather-target="currentDescription"
+    .details.row
+      .detail-column.col-sm-6
+        p
+          strong Feels Like:
+          span.feels-like data-weather-target="feelsLike"
+          | °F
+        p
+          strong Min Temperature:
+          span.min-temp data-weather-target="minTemp"
+          | °F
+        p
+          strong Max Temperature:
+          span.max-temp data-weather-target="maxTemp"
+          | °F
+        p
+          strong Humidity:
+          span.humidity data-weather-target="humidity"
+          | %
+      .detail-column.col-sm-6
+        p
+          strong Wind Speed:
+          span.wind-speed data-weather-target="windSpeed"
+          | mph
+        p
+          strong Cloudiness:
+          span.cloudiness data-weather-target="cloudiness"
+          | %
+        p
+          strong Pressure:
+          span.pressure data-weather-target="pressure"
+          | hPa
+        p
+          strong Sunrise:
+          span.sunrise data-weather-target="sunrise"
+        p
+          strong Sunset:
+          span.sunset data-weather-target="sunset"
