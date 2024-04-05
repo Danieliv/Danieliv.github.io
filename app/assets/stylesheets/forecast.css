@@ -1,0 +1,35 @@
+.forecast-card {
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+  .card-body {
+    padding: 15px;
+  }
+  .date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .forecast-item {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  .forecast-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .forecast-temperature {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .forecast-description {
+    text-transform: capitalize;
+    margin-top: 5px;
+  }
+}
