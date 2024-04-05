@@ -4,17 +4,26 @@ class WeatherController < ApplicationController
   end
 
   def get_weather
-    @weather_data = WeatherService.fetch_weather_by(latitude:  params[:latitude],
-                                                    longitude: params[:longitude],
-                                                    city:      params[:city],
-                                                    zip:       params[:zip_code])
+    @weather = WeatherService.fetch_weather_by(latitude:  weather_params[:latitude],
+                                               longitude: weather_params[:longitude],
+                                               city:      weather_params[:city],
+                                               zip:       weather_params[:zip_code])
 
-    render json: @weather_data
+    render json: @weather
+  end
+
+  def get_forecast
+    @forecast = WeatherService.fetch_forecast_by(latitude:  weather_params[:latitude],
+                                                 longitude: weather_params[:longitude],
+                                                 city:      weather_params[:city],
+                                                 zip:       weather_params[:zip_code],
+                                                 count:     weather_params[:count])
+    render json: @forecast
   end
 
   private
 
   def weather_params
-    params.permit(:latitude, :longitude, :city, :zip_code)
+    params.permit(:latitude, :longitude, :city, :zip_code, :count)
   end
 end
